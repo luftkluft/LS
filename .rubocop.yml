@@ -1,0 +1,17 @@
+require: rubocop-performance
+
+AllCops:
+  Exclude:
+    - bin/*
+    - Gemfile
+    - db/schema.rb
+    - db/migrate/*
+
+Metrics/LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: false
+
+FrozenStringLiteralComment:
+  Enabled: false
