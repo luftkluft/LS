@@ -19,6 +19,7 @@ gem 'pagy'
 gem 'pundit'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'i18n'
+gem 'devise'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 gem 'jquery-rails'
 

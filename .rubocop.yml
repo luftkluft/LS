@@ -2,6 +2,7 @@ require: rubocop-performance
 
 AllCops:
   Exclude:
+    - config/initializers/devise.rb
     - bin/*
     - Gemfile
     - db/schema.rb
@@ -9,6 +10,9 @@ AllCops:
 
 Metrics/LineLength:
   Max: 120
+
+Metrics/BlockLength:
+  Max: 30
 
 Documentation:
   Enabled: false
