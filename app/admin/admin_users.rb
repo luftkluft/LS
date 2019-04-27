@@ -21,6 +21,9 @@ ActiveAdmin.register AdminUser do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :role
+      f.input :level
+      f.input :image
     end
     f.actions
   end
