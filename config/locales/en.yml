@@ -13,21 +13,30 @@
 # To use a different locale, set it with `I18n.locale`:
 #
 #     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  navigation:
+    login: "Sign in"
+    logout: "Sign out"
+    about: "About"
+    home: "Home"
+    role: "Role: "
+    level: "Level: "
+    brand: "LightSoft"
+  devise:
+    titles:
+      signup: "Sign Up"
+      edit_account: "Edit user data"
+      delete_account: "Delete_account"
+      login: "Sign In"
+      forgot_password: "Forgot your password?"
+    buttons:
+      create_account: "Create account"
+      sign_in: "Sign in"
+      update: "Update"
+      delete_account: "Delete account"
+      forgot_password: "Forgot your password?"
+      reset_password: "Send email for password reset"
+    other:
+      current_pass_for_confirmation: "(current password in needed for confirmation)"
+      characters_minimum: "characters minimum"
+      leave_blank: "(leave blank, if you don't want to change it)"
