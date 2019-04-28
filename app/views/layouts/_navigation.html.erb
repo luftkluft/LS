@@ -47,6 +47,9 @@
             <li><%= link_to t('navigation.logout'), destroy_user_session_path, method: :delete, class:'dropdown-item' %></li>
           </ul>
         </li>
+        <li>
+          <%= image_tag current_user.image.url, width: 50, height: 50 %>
+        </li>
       </ul>
     
     <% else %>
