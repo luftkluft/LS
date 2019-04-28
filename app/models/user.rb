@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-  # after_create :send_welcome_email
+  after_create :send_welcome_email
   mount_uploader :image, AvatarUploader
 
   private

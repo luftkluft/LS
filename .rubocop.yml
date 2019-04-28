@@ -2,6 +2,7 @@ require: rubocop-performance
 
 AllCops:
   Exclude:
+    - config/environments/*
     - config/initializers/devise.rb
     - bin/*
     - Gemfile

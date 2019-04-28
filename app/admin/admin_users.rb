@@ -9,8 +9,6 @@ ActiveAdmin.register AdminUser do
     column :role
     column :level
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
     column :created_at
     actions
   end
