@@ -13,7 +13,3 @@ development:
 test:
   <<: *default
   database: lightsoft_test
-
-production:
-  <<: *default
-  database: lightsoft_production
