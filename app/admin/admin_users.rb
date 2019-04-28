@@ -3,7 +3,9 @@ ActiveAdmin.register AdminUser do
   index do
     selectable_column
     id_column
-    column :image
+    column 'Avatar' do |admin_user|
+      image_tag admin_user.image.url, width: 100, height: 100
+    end
     column :role
     column :level
     column :email

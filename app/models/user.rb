@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   # after_create :send_welcome_email
+  mount_uploader :image, AvatarUploader
 
   private
 
