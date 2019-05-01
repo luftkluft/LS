@@ -1,4 +1,8 @@
 en:
+  services:
+    set_locale:
+      error: "Error setting current locale!"
+      update_success: "Locale was updated."
   navigation:
     login: "Sign in"
     logout: "Sign out"
@@ -7,6 +11,7 @@ en:
     role: "Role: "
     level: "Level: "
     brand: "LightSoft"
+    help: "Help"
   devise:
     titles:
       signup: "Sign Up"

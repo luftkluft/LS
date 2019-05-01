@@ -32,14 +32,14 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('navigation.about') %><b class="caret"></b></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"><%= t('navigation.help') %><b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Действие</a></li>
-            <li><a href="#">Другое действие</a></li>
+            <li><a href="#"><%= t('navigation.about') %></a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a><%= t('navigation.role') %><%= current_user.role %></a></li>
             <li><a><%= t('navigation.level') %><%= current_user.level %></a></li>
@@ -49,6 +49,13 @@
         </li>
         <li>
           <%= image_tag current_user.image.url, width: 50, height: 50 %>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown"><%= I18n.locale %><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a id="navigation-ru" href="#">ru</a></li>
+            <li><a id="navigation-en" href="#">en</a></li>
+          </ul>
         </li>
       </ul>
     

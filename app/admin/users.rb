@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :password, :password_confirmation, :role, :level, :image
+  permit_params :email, :password, :password_confirmation, :role, :level, :image, :current_locale
 
   index do
     selectable_column
@@ -11,6 +11,7 @@ ActiveAdmin.register User do
     column :level
     column :email
     column :created_at
+    column :current_locale
     actions
   end
 
@@ -24,9 +25,10 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
       f.input :password_confirmation
-      f.input :role
+      f.input :role, as: :select, collection: %w[guest student operator director admin]
       f.input :level
       f.input :image
+      f.input :current_locale, as: :select, collection: %w[en ru]
     end
     f.actions
   end

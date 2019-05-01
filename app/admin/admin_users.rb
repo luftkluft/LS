@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation, :role, :level, :image
+  permit_params :email, :password, :password_confirmation, :role, :level, :image, :current_locale
   index do
     selectable_column
     id_column
@@ -10,6 +10,7 @@ ActiveAdmin.register AdminUser do
     column :level
     column :email
     column :created_at
+    column :current_locale
     actions
   end
 
@@ -24,6 +25,7 @@ ActiveAdmin.register AdminUser do
       f.input :role
       f.input :level
       f.input :image
+      f.input :current_locale, as: :select, collection: %w[en ru]
     end
     f.actions
   end

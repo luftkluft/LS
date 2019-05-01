@@ -1,0 +1,32 @@
+ru:
+  services:
+    set_locale:
+      error: "Ошибка установки текущей локали!"
+      update_success: "Локаль обновлена."
+  navigation:
+    login: "Вход"
+    logout: "Выход"
+    about: "О приложении"
+    home: "На главную"
+    role: "Должность: "
+    level: "Допуск: "
+    brand: "LightSoft"
+    help: "Помощь"
+  devise:
+    titles:
+      signup: "Зарегистрироваться"
+      edit_account: "Редактировать данные"
+      delete_account: "Удалить аккаунт"
+      login: "Войти"
+      forgot_password: "Забыли пароль?"
+    buttons:
+      create_account: "Создать аккаунт"
+      sign_in: "Войти"
+      update: "Обновить"
+      delete_account: "Удалить аккаунт"
+      forgot_password: "Забыли пароль?"
+      reset_password: "Послать письмо для сброса пароля"
+    other:
+      current_pass_for_confirmation: "(текущий пароль необходим для подтверждения)"
+      characters_minimum: "символов минимум"
+      leave_blank: "(оставьте пустым, если не хотите менять)"

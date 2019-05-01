@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'home#index'
+  match '/set_current_locale', to: 'home#set_current_locale', via: 'get'
 end
