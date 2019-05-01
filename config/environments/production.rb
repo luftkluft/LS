@@ -70,14 +70,25 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
+  ## config.action_mailer.delivery_method = :smtp
+  ## config.action_mailer.smtp_settings = {
+  ##   user_name: Rails.application.credentials.production[:gmail][:user_name],
+  ##   password: Rails.application.credentials.production[:gmail][:password],
+  ##   address: Rails.application.credentials.production[:gmail][:address],
+  ##   domain: Rails.application.credentials.production[:gmail][:domain],
+  ##   port: Rails.application.credentials.production[:gmail][:port],
+  ##   authentication: Rails.application.credentials.production[:gmail][:authentication],
+  ##   openssl_verify_mode: 'none'
+  ## }
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name: Rails.application.credentials.production[:gmail][:user_name],
-    password: Rails.application.credentials.production[:gmail][:password],
-    address: Rails.application.credentials.production[:gmail][:address],
-    domain: Rails.application.credentials.production[:gmail][:domain],
-    port: Rails.application.credentials.production[:gmail][:port],
-    authentication: Rails.application.credentials.production[:gmail][:authentication],
+    user_name: Rails.application.credentials.development[:mailtrap][:user_name],
+    password: Rails.application.credentials.development[:mailtrap][:password],
+    address: Rails.application.credentials.development[:mailtrap][:address],
+    domain: Rails.application.credentials.development[:mailtrap][:domain],
+    port: Rails.application.credentials.development[:mailtrap][:port],
+    authentication: Rails.application.credentials.development[:mailtrap][:authentication],
     openssl_verify_mode: 'none'
   }
 
