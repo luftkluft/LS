@@ -17,13 +17,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .devise-form {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-top:50px;
   padding: 15px;
   border-style: solid;
   border-width: 2px;
-  border-color: rgb(185, 170, 170);
+  border-color: #848484;
   border-radius: 5px;
+  background-color: rgba(255, 255, 225, 0.6);
+}
+
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.sign_in {
+  background-color: #F2F2F2;
+  min-height: 100vh;
+}
+
+.sign_out {
+  background-image: url(image_path('background.jpg'));
+  background-color:#D8F6CE;
+  min-height: 100vh;
 }

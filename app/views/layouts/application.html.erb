@@ -11,11 +11,17 @@
 
   <body>
     <%= render "layouts/navigation" %>
+    <% if user_signed_in? %>
+      <div class="container-fluid sign_in">
+    <% else %>
+      <div class="container-fluid sign_out">
+    <% end %>
     <% flash.each do |key, message| %>
       <p class="alert alert-<%= key %>"><%= message %></p>
     <% end %>
     <div class="container">
       <%= yield %> 
+    </div>
     </div>
   </body>
 </html>
