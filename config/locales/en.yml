@@ -1,5 +1,11 @@
 en:
   services:
+    check_routes:
+      error: "Error checking route!"
+    check_black_routes:
+      error: "Forbidden route detected!"
+    check_white_routes:
+      error: "Missing required route!"
     set_locale:
       error: "Error setting current locale!"
       update_success: "Locale was updated."

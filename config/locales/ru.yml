@@ -1,5 +1,11 @@
 ru:
   services:
+    check_routes:
+      error: "Ошибка проверки роута!"
+    check_black_routes:
+      error: "Обнаружен запрещённый роут!"
+    check_white_routes:
+      error: "Запрашиваемый роут не найден!"
     set_locale:
       error: "Ошибка установки текущей локали!"
       update_success: "Локаль обновлена."
