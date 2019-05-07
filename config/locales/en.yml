@@ -1,4 +1,13 @@
 en:
+  posts:
+    articles: "Articles"
+    new_article: "New article"
+    save: "Save"
+    update: "Update"
+    update_article: "Editing article"
+    all_articles: "All articles"
+    delete: "Delete"
+    are_you_sure: "Are You sure?"
   services:
     check_routes:
       error: "Error checking route!"
@@ -18,6 +27,7 @@ en:
     level: "Level: "
     brand: "LightSoft"
     help: "Help"
+    blog: "Blog"
   devise:
     titles:
       signup: "Sign Up"

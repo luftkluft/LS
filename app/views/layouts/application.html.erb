@@ -19,9 +19,7 @@
     <% flash.each do |key, message| %>
       <p class="alert alert-<%= key %>"><%= message %></p>
     <% end %>
-    <div class="container">
       <%= yield %> 
-    </div>
     </div>
   </body>
 </html>

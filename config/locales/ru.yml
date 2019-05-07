@@ -1,4 +1,13 @@
 ru:
+  posts:
+    articles: "Статьи"
+    new_article: "Новая статья"
+    save: "Сохранить"
+    update: "Изменить"
+    update_article: "Редактирование статьи"
+    all_articles: "Все статьи"
+    delete: "Удалить"
+    are_you_sure: "Вы уверены?"
   services:
     check_routes:
       error: "Ошибка проверки роута!"
@@ -18,6 +27,7 @@ ru:
     level: "Допуск: "
     brand: "LightSoft"
     help: "Помощь"
+    blog: "Блог"
   devise:
     titles:
       signup: "Зарегистрироваться"

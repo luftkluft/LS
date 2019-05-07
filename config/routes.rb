@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'home#index'
   match '/set_current_locale', to: 'home#set_current_locale', via: 'get'
+  resources :posts
 end
