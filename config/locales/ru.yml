@@ -8,6 +8,7 @@ ru:
     all_articles: "Все статьи"
     delete: "Удалить"
     are_you_sure: "Вы уверены?"
+    back: "Назад"
   services:
     check_routes:
       error: "Ошибка проверки роута!"

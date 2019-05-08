@@ -1,15 +1,26 @@
 <%= form_for @post do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br><br>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
 
-  <%= f.label :summary %><br>
-  <%= f.text_area :summary %><br><br>
+  <div class="form-group">
+    <%= f.label :summary %>
+    <%= f.text_area :summary, class: "form-control" %>
+  </div>
 
-  <%= f.label :body %><br>
-  <%= f.text_area :body %><br><br>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
 
-  <%= f.label :level %><br>
-  <%= f.text_field :level %><br><br>
+  <div class="form-group">
+    <%= f.label :level %>
+    <%= f.text_field :level, class: "form-control" %>
+  </div>
 
-  <%= f.submit t('posts.save') %>
+  <div class="form-group">
+    <%= f.submit t('posts.save'), class: "btn btn-primary" %>
+    <%= link_to t('posts.back'), :back, class: "btn btn-warning" %>
+  </div>
 <% end %>

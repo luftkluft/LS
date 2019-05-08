@@ -8,6 +8,7 @@ en:
     all_articles: "All articles"
     delete: "Delete"
     are_you_sure: "Are You sure?"
+    back: "Back"
   services:
     check_routes:
       error: "Error checking route!"
