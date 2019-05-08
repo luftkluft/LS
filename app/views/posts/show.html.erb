@@ -15,6 +15,7 @@
     </small>
   </section>
   <section class="post-body">
+    <%= image_tag @post.image.url(:size400x300), class: 'img-show' if @post.image? %>
     <%= @post.body %>
   </section>
 </article>

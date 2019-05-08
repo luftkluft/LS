@@ -13,7 +13,8 @@
                                        data: { confirm: t('posts.are_you_sure') } %>
     </small>
   </section>
-  <section class="post-summary">
+  <section class="post-summary clearfix">
+    <%= image_tag post.image.url(:size100x80), class: 'img-thumbnail thumb' if post.image? %>
     <%= post.summary %>
   </section>
 </article>

@@ -11,4 +11,12 @@ article.post {
   section.post-body {
     padding: 1em 0;
   }
+  .img-show {
+    display: block;
+    margin-bottom: 2em;
+  };
+  .thumb {
+    float: left;
+    margin-right: 1em;
+  };
 }
