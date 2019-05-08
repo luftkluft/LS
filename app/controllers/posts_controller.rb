@@ -14,9 +14,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to @post, success: t('posts.success_create')
     else
-      render :new
+      render :new, danger: t('posts.failed_create')
     end
   end
 
@@ -24,15 +24,18 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to @post
+      redirect_to @post, success: t('posts.success_update')
     else
-      render :edit
+      render :edit, danger: t('posts.failed_update')
     end
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path
+    if @post.destroy
+      redirect_to posts_path, success: t('posts.success_delete')
+    else
+      flash[:danger] = t('posts.failed_delete')
+    end
   end
 
   private

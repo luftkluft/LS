@@ -1,4 +1,6 @@
 en:
+  common:
+    errors: "Errors"
   posts:
     articles: "Articles"
     new_article: "New article"
@@ -9,6 +11,13 @@ en:
     delete: "Delete"
     are_you_sure: "Are You sure?"
     back: "Back"
+    success_update: "Article successfully updated."
+    failed_update: "Article update failed!"
+    success_create: "Article successfully created."
+    failed_create: "Article create failed!"
+    success_delete: "Article successfully deleted."
+    failed_delete: "Article delete failed!"
+    submit: '%{action}'
   services:
     check_routes:
       error: "Error checking route!"

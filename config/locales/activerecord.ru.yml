@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    models:
+      post: 'Статья'
+    attributes:
+      post:
+        title: 'Название'
+        summary: 'Краткая статья'
+        body: 'Содержание'
+        level: 'Допуск'
+        all_tags: 'Теги'
+      category:
+        name: 'Название'
+        parent_id: 'Категория родитель'
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+        not_a_number: 'не является числом'

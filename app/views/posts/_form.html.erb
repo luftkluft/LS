@@ -1,3 +1,13 @@
+<% if @post.errors.any? %>
+  <div class="alert alert-danger">
+    <h5><%= t('common.errors') %></h5>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  </div>
+<% end %>
 <%= form_for @post do |f| %>
   <div class="form-group">
     <%= f.label :title %>
@@ -15,12 +25,13 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :level %>
+    <%= f.label t('activerecord.attributes.post.level') %>
     <%= f.text_field :level, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.submit t('posts.save'), class: "btn btn-primary" %>
+    <%= f.submit t('posts.submit', action: @post.new_record? ? t('posts.save') : t('posts.update')),
+                                   class: "btn btn-primary" %>
     <%= link_to t('posts.back'), :back, class: "btn btn-warning" %>
   </div>
 <% end %>

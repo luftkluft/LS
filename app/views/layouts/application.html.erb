@@ -16,10 +16,10 @@
     <% else %>
       <div class="container-fluid sign_out">
     <% end %>
-    <% flash.each do |key, message| %>
-      <p class="alert alert-<%= key %>"><%= message %></p>
-    <% end %>
       <div class="container main">
+        <% flash.each do |key, message| %>
+          <p class="alert alert-<%= key %>"><%= message %></p>
+        <% end %>
         <%= yield %>
       </div>
     </div>

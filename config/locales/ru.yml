@@ -1,4 +1,6 @@
 ru:
+  common:
+    errors: "Ошибки"
   posts:
     articles: "Статьи"
     new_article: "Новая статья"
@@ -9,6 +11,13 @@ ru:
     delete: "Удалить"
     are_you_sure: "Вы уверены?"
     back: "Назад"
+    success_update: "Статья успушно обновлена."
+    failed_update: "Ошибка обновления статьи!"
+    success_create: "Статья успешно создана."
+    failed_create: "Ошибка создания статьи!"
+    success_delete: "Статья успешно удалена."
+    failed_delete: "Ошибка удаления статьи!"
+    submit: '%{action}'
   services:
     check_routes:
       error: "Ошибка проверки роута!"
