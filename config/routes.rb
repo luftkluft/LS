@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   match '/set_current_locale', to: 'home#set_current_locale', via: 'get'
   resources :posts
+  resources :pictures, only: %i[create destroy]
 end

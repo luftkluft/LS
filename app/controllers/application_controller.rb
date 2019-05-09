@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery prepend: true
   before_action :check_routes
   before_action :set_locale
   add_flash_types :success, :danger, :info, :warning

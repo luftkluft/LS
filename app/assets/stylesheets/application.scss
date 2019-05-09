@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *# require_tree .
+ *= require trix
  *= require_self
  *= require main
  *= require posts
@@ -23,7 +24,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .devise-form {

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_post, only: %i[show edit update destroy]
   def index
     @posts = Post.all
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     if @post.destroy
       redirect_to posts_path, success: t('posts.success_delete')
     else
-      flash[:danger] = t('posts.failed_delete')
+      redirect_to posts_path, danger: t('posts.failed_delete')
     end
   end
 

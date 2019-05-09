@@ -11,7 +11,7 @@ ru:
     delete: "Удалить"
     are_you_sure: "Вы уверены?"
     back: "Назад"
-    success_update: "Статья успушно обновлена."
+    success_update: "Статья успешно обновлена."
     failed_update: "Ошибка обновления статьи!"
     success_create: "Статья успешно создана."
     failed_create: "Ошибка создания статьи!"

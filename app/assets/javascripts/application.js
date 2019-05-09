@@ -16,4 +16,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require trix
 //= require_tree .
