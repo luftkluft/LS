@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[show edit update destroy]
   def index
-    @posts = Post.all
+    @pagy, @posts = pagy(Post.all, items: 2)
   end
 
   def show; end
@@ -16,7 +16,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, success: t('posts.success_create')
     else
-      render :new, danger: t('posts.failed_create')
+      flash.now[:danger] = t('posts.failed_create')
+      render :new
     end
   end
 
@@ -26,7 +27,8 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       redirect_to @post, success: t('posts.success_update')
     else
-      render :edit, danger: t('posts.failed_update')
+      flash.now[:danger] = t('posts.failed_update')
+      render :edit
     end
   end
 
@@ -34,7 +36,8 @@ class PostsController < ApplicationController
     if @post.destroy
       redirect_to posts_path, success: t('posts.success_delete')
     else
-      redirect_to posts_path, danger: t('posts.failed_delete')
+      flash.now[:danger] = t('posts.failed_delete')
+      redirect_to posts_path
     end
   end
 
@@ -45,6 +48,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :summary, :body, :level, :image)
+    params.require(:post).permit(:title, :summary, :body, :level, :image, :all_tags)
   end
 end

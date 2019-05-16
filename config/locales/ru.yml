@@ -1,6 +1,9 @@
 ru:
   common:
     errors: "Ошибки"
+  tags:
+    no_articles: "Нет статей."
+    tags: "Теги"
   posts:
     articles: "Статьи"
     new_article: "Новая статья"

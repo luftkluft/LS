@@ -1,6 +1,9 @@
 en:
   common:
     errors: "Errors"
+  tags:
+    no_articles: "No articles."
+    tags: "Tags"
   posts:
     articles: "Articles"
     new_article: "New article"

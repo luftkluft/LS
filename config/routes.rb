@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   match '/set_current_locale', to: 'home#set_current_locale', via: 'get'
   resources :posts
   resources :pictures, only: %i[create destroy]
+  resources :tags, only: [:show]
 end

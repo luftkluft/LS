@@ -1,0 +1,8 @@
+<%= render 'posts/blog_navigation' %>
+<h1>#<%= @tag.name %></h1>
+<% if @tag.posts.empty?  %>
+  <h2><%= t('tags.no_articles') %></h2>
+<% else %>
+  <%= render @posts %>
+  <%== pagy_bootstrap_nav(@pagy).html_safe %>
+<% end %>
