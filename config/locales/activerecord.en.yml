@@ -12,6 +12,7 @@ en:
       category:
         name: 'Title'
         parent_id: 'Parent category'
+        category: 'Category'
     errors:
       messages:
         blank: "can't be blank"

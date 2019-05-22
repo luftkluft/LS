@@ -1,16 +1,17 @@
-<%= render 'posts/blog_navigation' %>
-<h1>#<%= @tag.name %></h1>
+<%= render 'category_navigation' %>
+<h1><%= @category.name %></h1>
+
 <div class="row">
   <div class="col-md-8">
-    <% if @tag.posts.empty?  %>
-      <h2><%= t('tags.no_articles') %></h2>
-    <% else %>
+    <%= render 'shared/breadcrumb', category: @category %>
+    <section id="posts">
       <%= render @posts %>
       <%== pagy_bootstrap_nav(@pagy).html_safe %>
-    <% end %>
+    </section>
   </div>
   <div class="col-md-4">
     <%= render'shared/submenu' %>
     <%= render'shared/tags' %>
   </div>
 </div>
+

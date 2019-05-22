@@ -1,0 +1,41 @@
+<%= render 'category_navigation' %>
+<div class="row">
+  <div class="col-md-8">
+    <section id="categories">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th><%= t('categories.title') %></th>
+            <th><%= t('categories.parent_category') %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each_with_index do |category, index| %>
+            <tr>
+              <% if @current_page.zero? %>
+                <td><%= index + 1 %></td>
+              <% else %>
+                <td><%= CategoriesController::PAGY_CATEGORIES_ITEMS * (@current_page - 1) + index + 1 %></td>
+              <% end %>
+              <td><%= category.name %></td>
+              <td><%= category.parent.name if category.parent.present? %></td>
+              <td>
+                <%= link_to t('categories.update'), edit_category_path(category), class: 'btn btn-primary'  %>
+                <%= link_to t('categories.delete'), category_path(category), method: :delete,
+                                                                             data: { confirm: t('categories.are_you_sure') },
+                                                                             class: 'btn btn-danger'  %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
+    <%== pagy_bootstrap_nav(@pagy).html_safe %>
+  </div>
+  <div class="col-md-4">
+    <%= render'shared/submenu' %>
+    <%= render'shared/tags' %>
+  </div>
+</div>

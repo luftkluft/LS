@@ -1,21 +1,34 @@
 <%= render 'blog_navigation' %>
-<article class="post">
-  <h1><%= @post.title %></h1>
-  <section class="post-head">
-    <small>
-      <time>
-        <%= @post.created_at.to_date.strftime("%d %B, %Y") %>
-      </time>
-        |
-        <%= link_to t('posts.update'), edit_post_path(@post) %>
-        |
-        <%= link_to t('posts.delete'), post_path(@post),
-                                       method: :delete,
-                                       data: { confirm: t('posts.are_you_sure') } %>
-    </small>
-  </section>
-  <section class="post-body">
-    <%= image_tag @post.image.url(:size400x300), class: 'img-show' if @post.image? %>
-    <%= @post.body.html_safe %>
-  </section>
-</article>
+<div class="row">
+  <div class="col-md-8">
+    <article class="post">
+      <%= render 'shared/breadcrumb', category: @post.category %>
+      <h1><%= @post.title %></h1>
+      <section class="post-head">
+        <small>
+          <time>
+            <%= @post.created_at.to_date.strftime("%d %B, %Y") %>
+          </time>
+            <% if @post.category.present? %>
+              |
+              <%= link_to @post.category.name, @post.category %>
+            <% end %>
+            |
+            <%= link_to t('posts.update'), edit_post_path(@post) %>
+            |
+            <%= link_to t('posts.delete'), post_path(@post),
+                                          method: :delete,
+                                          data: { confirm: t('posts.are_you_sure') } %>
+        </small>
+      </section>
+      <section class="post-body">
+        <%= image_tag @post.image.url(:size400x300), class: 'img-show' if @post.image? %>
+        <%= @post.body.html_safe %>
+      </section>
+    </article>
+  </div>
+  <div class="col-md-4">
+    <%= render'shared/submenu' %>
+    <%= render'shared/tags' %>
+  </div>
+</div>

@@ -12,6 +12,7 @@ ru:
       category:
         name: 'Название'
         parent_id: 'Категория родитель'
+        category: 'Категория'
     errors:
       messages:
         blank: 'не может быть пустым'

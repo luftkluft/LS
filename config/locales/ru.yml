@@ -4,6 +4,25 @@ ru:
   tags:
     no_articles: "Нет статей."
     tags: "Теги"
+  categories:
+    parent_category: "Категория родитель"
+    title: "Название"
+    categories: "Категории"
+    save: "Сохранить"
+    update: "Изменить"
+    delete: "Удалить"
+    are_you_sure: "Вы уверены?"
+    success_update: "Категория успешно обновлена."
+    failed_update: "Ошибка обновления категории!"
+    success_create: "Категория успешно создана."
+    failed_create: "Ошибка создания категории!"
+    success_delete: "Категория успешно удалена."
+    failed_delete: "Ошибка удаления категории!"
+    submit: '%{action}'
+    back: "Назад"
+    new_category: "Новая категория"
+    all_categories: "Все категории"
+    update_category: "Редактирование категории"
   posts:
     articles: "Статьи"
     new_article: "Новая статья"

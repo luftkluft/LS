@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  PAGY_POSTS_ITEMS = 3
   before_action :authenticate_user!
   before_action :set_post, only: %i[show edit update destroy]
   def index
-    @pagy, @posts = pagy(Post.all, items: 2)
+    @pagy, @posts = pagy(Post.all.order(created_at: :desc), items: PAGY_POSTS_ITEMS)
   end
 
   def show; end
@@ -48,6 +49,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :summary, :body, :level, :image, :all_tags)
+    params.require(:post).permit(:title, :summary, :body, :level, :image, :all_tags, :category_id)
   end
 end

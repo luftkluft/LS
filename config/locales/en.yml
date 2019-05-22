@@ -4,6 +4,25 @@ en:
   tags:
     no_articles: "No articles."
     tags: "Tags"
+  categories:
+    parent_category: "Parent category"
+    title: "Title"
+    categories: "Categories"
+    save: "Save"
+    update: "Update"
+    delete: "Delete"
+    are_you_sure: "Are You sure?"
+    success_update: "Category successfully updated."
+    failed_update: "Category update failed!"
+    success_create: "Category successfully created."
+    failed_create: "Category create failed!"
+    success_delete: "Category successfully deleted."
+    failed_delete: "Category delete failed!"
+    submit: '%{action}'
+    back: "Back"
+    new_category: "New category"
+    all_categories: "All categories"
+    update_category: "Editing category"
   posts:
     articles: "Articles"
     new_article: "New article"
