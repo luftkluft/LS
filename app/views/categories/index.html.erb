@@ -22,10 +22,12 @@
               <td><%= category.name %></td>
               <td><%= category.parent.name if category.parent.present? %></td>
               <td>
+              <% if current_user.role == 'admin' %>
                 <%= link_to t('categories.update'), edit_category_path(category), class: 'btn btn-primary'  %>
                 <%= link_to t('categories.delete'), category_path(category), method: :delete,
                                                                              data: { confirm: t('categories.are_you_sure') },
                                                                              class: 'btn btn-danger'  %>
+              <% end %>
               </td>
             </tr>
           <% end %>

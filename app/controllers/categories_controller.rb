@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
 
   def index
+    authorize Category
     @current_page = current_page
     @pagy, @categories = pagy(Category.all.order(:name), items: PAGY_CATEGORIES_ITEMS)
   end
@@ -15,11 +16,13 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    authorize @category
     @categories = Category.all.order(:name)
   end
 
   def create
     @category = Category.new(category_params)
+    authorize @category
     if @category.save
       redirect_to categories_path, success: t('categories.success_create')
     else
@@ -30,10 +33,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    authorize @category
     @categories = Category.where("id != #{@category.id}").order(:name)
   end
 
   def update
+    authorize @category
     if @category.update_attributes(category_params)
       redirect_to categories_path, success: t('categories.success_update')
     else
@@ -44,6 +49,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    authorize @category
     if @category.destroy
       redirect_to categories_path, success: t('categories.success_delete')
     else

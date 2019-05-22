@@ -1,2 +1,4 @@
 <h1><%= t('categories.new_category') %></h1>
-<%= render 'form' %>
+<% if current_user.role == 'admin' %>
+  <%= render 'form' %>
+<% end %>

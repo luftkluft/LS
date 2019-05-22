@@ -1,3 +1,7 @@
 <%= link_to t('posts.all_articles'), posts_path %>
-|
-<%= link_to t('posts.new_article'), new_post_path %>
+<% if current_user.role == 'admin' %>
+  |
+  <%= link_to t('posts.new_article'), new_post_path %>
+  |
+  <%= link_to t('categories.all_categories'), categories_path %>
+<% end %>

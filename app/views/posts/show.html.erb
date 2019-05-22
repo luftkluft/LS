@@ -13,12 +13,14 @@
               |
               <%= link_to @post.category.name, @post.category %>
             <% end %>
-            |
-            <%= link_to t('posts.update'), edit_post_path(@post) %>
-            |
-            <%= link_to t('posts.delete'), post_path(@post),
-                                          method: :delete,
-                                          data: { confirm: t('posts.are_you_sure') } %>
+            <% if current_user.role == 'admin' %>
+              |
+              <%= link_to t('posts.update'), edit_post_path(@post) %>
+              |
+              <%= link_to t('posts.delete'), post_path(@post),
+                                            method: :delete,
+                                            data: { confirm: t('posts.are_you_sure') } %>
+            <% end %>
         </small>
       </section>
       <section class="post-body">

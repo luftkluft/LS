@@ -3,17 +3,19 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[show edit update destroy]
   def index
-    @pagy, @posts = pagy(Post.all.order(created_at: :desc), items: PAGY_POSTS_ITEMS)
+    @pagy, @posts = pagy(Post.where('level <= ?', current_user.level).order(created_at: :desc), items: PAGY_POSTS_ITEMS)
   end
 
   def show; end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
+    authorize @post
     if @post.save
       redirect_to @post, success: t('posts.success_create')
     else
@@ -22,9 +24,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @post
+  end
 
   def update
+    authorize @post
     if @post.update_attributes(post_params)
       redirect_to @post, success: t('posts.success_update')
     else
@@ -34,6 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize @post
     if @post.destroy
       redirect_to posts_path, success: t('posts.success_delete')
     else
