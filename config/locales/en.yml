@@ -1,4 +1,8 @@
 en:
+  crypt:
+    encrypt_error: 'Coding error!'
+    decrypt_error: 'Decoding error!'
+    articles_decrypt_error: 'Articles decoding error!'
   home:
     hello: 'Hello, unidentified passerby!'
   pundit:

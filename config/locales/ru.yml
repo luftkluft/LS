@@ -1,4 +1,8 @@
 ru:
+  crypt:
+    encrypt_error: 'Ошибка кодирования!'
+    decrypt_error: 'Ошибка декодирования!'
+    articles_decrypt_error: 'Ошибка декодирования статей!'
   home:
     hello: 'Привет, неопознанный прохожий!'
   pundit:

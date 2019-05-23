@@ -4,13 +4,17 @@ ActiveAdmin.register Post do
   index do
     selectable_column
     id_column
-    column :title
-    column :summary
+    column :title do |post|
+      post.title.html_safe.first(15)
+    end
+    column :summary do |post|
+      post.summary.html_safe.first(15)
+    end
     column :image do |post|
       image_tag post.image.url(:size100x80), class: 'img-show' if post.image?
     end
     column :body do |post|
-      post.body.html_safe
+      post.body.html_safe.first(15)
     end
     column :level
     actions

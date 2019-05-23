@@ -1,9 +1,17 @@
 class PostsController < ApplicationController
   PAGY_POSTS_ITEMS = 3
   before_action :authenticate_user!
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_encrypted_post, only: %i[update]
+  before_action :set_decrypted_post, only: %i[show edit]
+  before_action :set_post, only: %i[destroy]
+  
   def index
-    @pagy, @posts = pagy(Post.where('level <= ?', current_user.level).order(created_at: :desc), items: PAGY_POSTS_ITEMS)
+    crypter = CryptPostService.new
+    decrypted_posts = crypter.decypted_posts(Post.user_level_posts(current_user))
+    posts = pagy(decrypted_posts, items: PAGY_POSTS_ITEMS)
+    posts[1] = decrypted_posts # <= fix pagy
+    flash.now[:danger] = crypter.errors.first if crypter.errors.any?
+    @pagy, @posts = posts
   end
 
   def show; end
@@ -14,7 +22,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    crypter = CryptPostService.new
+    @post = Post.new(crypter.encrypted_data(post_params))
     authorize @post
     if @post.save
       redirect_to @post, success: t('posts.success_create')
@@ -30,7 +39,8 @@ class PostsController < ApplicationController
 
   def update
     authorize @post
-    if @post.update_attributes(post_params)
+    crypter = CryptPostService.new
+    if @post.update_attributes(crypter.encrypted_data(post_params))
       redirect_to @post, success: t('posts.success_update')
     else
       flash.now[:danger] = t('posts.failed_update')
@@ -52,6 +62,22 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_encrypted_post
+    crypter = CryptPostService.new
+    @post = Post.find(params[:id])
+    @post = crypter.encrypted_data(@post)
+    flash.now[:danger] = crypter.errors.first if crypter.errors.any?
+    @post
+  end
+
+  def set_decrypted_post
+    crypter = CryptPostService.new
+    @post = Post.find(params[:id])
+    @post = crypter.decrypted_back(@post)
+    flash.now[:danger] = crypter.errors.first if crypter.errors.any?
+    @post
   end
 
   def post_params

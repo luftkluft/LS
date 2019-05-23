@@ -11,7 +11,12 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @pagy, @posts = pagy(Post.where(category_id: [@category.subtree_ids]), items: PAGY_CATEGORIES_ITEMS)
+    crypter = CryptPostService.new
+    decrypted_posts = crypter.decypted_posts(Post.where(category_id: [@category.subtree_ids]))
+    posts = pagy(decrypted_posts, items: PAGY_CATEGORIES_ITEMS)
+    posts[1] = decrypted_posts # <= fix pagy
+    flash.now[:danger] = crypter.errors.first if crypter.errors.any?
+    @pagy, @posts = posts
   end
 
   def new

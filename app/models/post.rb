@@ -15,4 +15,8 @@ class Post < ApplicationRecord
       Tag.where(name: name.strip).first_or_create!
     end
   end
+
+  def self.user_level_posts(current_user)
+    where('level <= ?', current_user.level).order(created_at: :desc)
+  end
 end
