@@ -31,7 +31,7 @@ class InfoService
 
   def database_info(info, db_info)
     info = net_info(info)
-    info += 'Data base info:' + '\n'
+    info += 'Database info:' + '\n'
     info = main_database_info(info, db_info)
     info = size_database_info(info, db_info)
     tablesrowcount(info) # <= for full info
