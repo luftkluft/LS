@@ -10,4 +10,9 @@ module ApplicationHelper
     result << content_tag(:li, category.name, class: 'breadcrumb-item active')
     result.join('').html_safe
   end
+
+  def app_info(current_user)
+    info = InfoService.new
+    info.app_info(current_user)
+  end
 end

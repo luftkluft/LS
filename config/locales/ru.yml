@@ -1,4 +1,16 @@
 ru:
+  app_info:
+    version: '%{version}'
+    current_user_error: "Залогинтесь!"
+    app_info_error: "Данные о состоянии приложения не получены!"
+    current_user: "Текущий пользователь: "
+    role: "Должность :"
+    database_memory_size_error: "Ошибка определения размера базы данных!"
+    totalrowcount_error': "Ошибка подсчёта строк!"
+    admin_info_error: "Ошибка получения данных администратора!"
+    app_info.net_error: "Ошибка получения сетевой информфции!"
+    main_database_info_error: "Ошибка получения основных данных!"
+    size_database_info_error: "Ошибка получения размера!"
   crypt:
     encrypt_error: 'Ошибка кодирования!'
     decrypt_error: 'Ошибка декодирования!'

@@ -34,8 +34,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><%= t('navigation.help') %><b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#"><%= t('navigation.info') %></a></li>
-            <li><a href="#"><%= t('navigation.about') %></a></li>
+            <li><a id="info" href="#" data-remote="true" onclick="alert('<%= app_info(current_user) %>');"><%= t('navigation.about') %></a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -57,8 +56,8 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown"><%= I18n.locale %><b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a id="navigation-ru" href="#">ru</a></li>
-            <li><a id="navigation-en" href="#">en</a></li>
+            <li><a id="navigation-ru" href="#" data-remote="true">ru</a></li>
+            <li><a id="navigation-en" href="#" data-remote="true">en</a></li>
           </ul>
         </li>
       </ul>

@@ -1,4 +1,16 @@
 en:
+  app_info:
+    version: '%{version}'
+    current_user_error: "Must be logged in!"
+    app_info_error: "Application status data not received!"
+    current_user: "Current user: "
+    role: "Role :"
+    database_memory_size_error: "Error determining database size!"
+    totalrowcount_error': "Row count error!"
+    admin_info_error: "Error getting admin data!"
+    app_info.net_error: "Error retrieving network information!"
+    main_database_info_error: "Error getting master data!"
+    size_database_info_error: "Error getting size!"
   crypt:
     encrypt_error: 'Coding error!'
     decrypt_error: 'Decoding error!'

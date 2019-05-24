@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_encrypted_post, only: %i[update]
   before_action :set_decrypted_post, only: %i[show edit]
   before_action :set_post, only: %i[destroy]
-  
+
   def index
     crypter = CryptPostService.new
     decrypted_posts = crypter.decypted_posts(Post.user_level_posts(current_user))
