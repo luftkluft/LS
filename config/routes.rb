@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :pictures, only: %i[create destroy]
   resources :tags, only: [:show]
   resources :categories
+  resources :room_messages
+  resources :rooms
 end

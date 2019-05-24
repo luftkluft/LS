@@ -93,6 +93,7 @@ ru:
     brand: "LightSoft"
     help: "Помощь"
     blog: "Блог"
+    chat: "Чат"
   devise:
     titles:
       signup: "Зарегистрироваться"

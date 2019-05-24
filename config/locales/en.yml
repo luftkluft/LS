@@ -90,6 +90,7 @@ en:
     brand: "LightSoft"
     help: "Help"
     blog: "Blog"
+    chat: "Chat"
   devise:
     titles:
       signup: "Sign Up"
