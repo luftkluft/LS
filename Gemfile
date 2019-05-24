@@ -24,6 +24,7 @@ gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 gem 'jquery-rails'
 gem 'trix-rails', require: 'trix'
 gem 'ancestry'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

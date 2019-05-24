@@ -1,3 +1,30 @@
-// Place all the styles related to the Rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.avatar {
+  max-height:30px;
+  border-radius: 15px;
+  width:auto;
+  vertical-align:middle;
+}
+
+.room-nav-link {
+  border: 1px solid rgba(255, 255, 225, 0.4);
+  background: rgba(255, 255, 225, 0.6);
+
+  & + .room-nav-link {
+    border-top: 0 none;
+  }
+}
+
+.chat {
+  border: 1px solid rgba(150, 150, 150, 0.4);
+  background: rgba(255, 255, 225, 0.6);
+  height: 50vh;
+  border-radius: 5px 5px 0 0;
+  overflow-y: auto;
+}
+
+.chat-input {
+  border-top: 0 none;
+  border-radius: 0 0 5px 5px;
+}
+
+

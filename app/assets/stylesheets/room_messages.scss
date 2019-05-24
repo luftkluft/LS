@@ -1,3 +1,19 @@
-// Place all the styles related to the RoomMessages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.chat-message-container {
+  padding: 5px;
+
+  .avatar {
+    margin: 5px;
+  }
+
+  .message-content {
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 225, 1.0);
+    border-radius: 5px;
+    background: rgba(255, 255, 225, 0.1);
+    color: rgb(51, 51, 29);
+  }
+
+  & + .chat-message-container {
+    margin-top: 10px;
+  }
+}

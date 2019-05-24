@@ -18,4 +18,6 @@
 //= require bootstrap
 //= require trix
 //= require pictures
+//= require rooms
+//= require room_messages
 //= require_tree .
