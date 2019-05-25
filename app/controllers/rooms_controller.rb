@@ -8,9 +8,8 @@ class RoomsController < ApplicationController
 
   def show
     @room_message = RoomMessage.new room: @room
-    @room_messages = @room.room_messages.includes(:user)
+    @room_messages = @room.room_messages.includes(:user).order('created_at DESC')
   end
-  
 
   def new
     @room = Room.new
@@ -27,8 +26,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @room.update_attributes(permitted_parameters)

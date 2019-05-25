@@ -1,7 +1,7 @@
 .avatar {
   max-height:30px;
   border-radius: 15px;
-  width:auto;
+  width: auto;
   vertical-align:middle;
 }
 
@@ -17,14 +17,19 @@
 .chat {
   border: 1px solid rgba(150, 150, 150, 0.4);
   background: rgba(255, 255, 225, 0.6);
-  height: 50vh;
+  height: 30vh;
   border-radius: 5px 5px 0 0;
+  padding: 15px;
   overflow-y: auto;
 }
 
 .chat-input {
   border-top: 0 none;
+  // border-radius: 3px;
   border-radius: 0 0 5px 5px;
 }
 
-
+.col {
+  border-radius: 5px;
+  background: rgba(135, 225, 240, 0.2);
+}

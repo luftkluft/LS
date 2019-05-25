@@ -7,24 +7,30 @@
     <%= render partial: 'rooms' %>
   </div>
 
-  <div class="col">
+  <div class="col-12 col-md-9">
+  <h3>Current messages</h3>
+  <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>"></div>
+  <%= form_for @room_message, remote: true do |f| %>
+    <div class="form group">
+      <%= f.text_field :message, class: 'form-control', placeholder: 'Print hear...', autofocus: true %>
+      <%= f.submit "Send message", class: 'btn btn-primary form-control-addon' %>
+  </div>
+      <%= f.text_field :room_id, type: "hidden" %>
+    <% end %>
+    <h3><%= @room.name %> history</h3>
     <div class="chat">
       <% @room_messages.each do |room_message| %>
         <div class="chat-message-container">
           <div class="row no-gutters">
-            <div class="col-auto text-center">
-              <%= image_tag current_user.image.url, width: 50, height: 50 %>
-            </div>
-
             <div class="col">
               <div class="message-content">
                 <p class="mb-1">
+                  <%= image_tag User.find(room_message.user_id).image.url,class: "avatar" %>
                   <%= room_message.message %>
                 </p>
-
                 <div class="text-right">
                   <small>
-                    <%= room_message.created_at %>
+                    <%= room_message.created_at.strftime(" %d %B %Y, %T") %>
                   </small>
                 </div>
               </div>
@@ -33,20 +39,19 @@
         </div>
       <% end %>
     </div>
-      <%= form_for @room_message, remote: true do |f| %>
-        <div class="input-group mb-3">
-          <%= f.text_field :message, as: :string,
-                                  wrapper: false,
-                                  label: false,
-                                  input_html: {
-                                    class: 'chat-input'
-                                  } %>
-          <div class="input-group-append">
-            <%= f.submit "Send", class: 'btn btn-primary chat-input' %>
-          </div>
-        </div>
-        <%= f.text_field :room_id, type: "hidden" %>
-      <% end %>
-  </div>
 </div>
 
+<div class="d-none" data-role="message-template">
+  <div class="chat-message-container">
+    <div class="row no-gutters">
+      <div>
+         <img src="" class="avatar text-left" alt="" data-role="user-avatar">
+      </div>
+        <p class="mb-1" data-role="message-text"></p>
+        <div class="text-right">
+          <small data-role="message-date"></small>
+        </div>
+        <hr>
+    </div>
+  </div>
+</div>

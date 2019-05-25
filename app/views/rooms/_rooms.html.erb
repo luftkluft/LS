@@ -1,13 +1,15 @@
 <div class="mb-3">
+  <% if current_user.role == 'admin' %>
   <%= link_to new_room_path, class: 'btn btn-primary' do %>
     Create a room
+  <% end %>
   <% end %>
 </div>
 
 <% if @rooms.present? %>
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
-      <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %>
+      <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %><br>
     <% end %>
   </nav>
 <% else %>
