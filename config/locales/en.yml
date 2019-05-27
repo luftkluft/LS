@@ -1,4 +1,22 @@
 en:
+  rooms:
+    rooms_title: "Rooms:"
+    how_do: "Select a chat room in the sidebar."
+    hello: "Remember, the enemy is spying!"
+    create_room: "Create room"
+    editing_room: "Editing room"
+    creating_room: "Creating room"
+    no_rooms: "The are no rooms."
+    current_messages: "Current messages:"
+    history: "Message history:"
+    typing: "Start typing here..."
+    send: "Send"
+    save: "Save"
+    back: "Back"
+    success_create: "Room successfully created."
+    failed_create: "Room create failed!"
+    success_update: "Room successfully updated."
+    failed_update: "Room update failed!"
   app_info:
     version: '%{version}'
     current_user_error: "Must be logged in!"
@@ -30,6 +48,7 @@ en:
       delete?: 'You cannot delete categories!'
   common:
     errors: "Errors"
+    back: "Back"
   tags:
     no_articles: "No articles."
     tags: "Tags"

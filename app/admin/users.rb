@@ -5,7 +5,7 @@ ActiveAdmin.register User do
     selectable_column
     id_column
     column 'Avatar' do |user|
-      image_tag user.image.url, width: 100, height: 100
+      image_tag user.image.url, width: 50, height: 50
     end
     column :role
     column :level

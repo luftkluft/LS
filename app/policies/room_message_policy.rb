@@ -1,0 +1,2 @@
+class RoomMessagePolicy < ApplicationPolicy
+end

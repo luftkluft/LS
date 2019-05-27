@@ -16,25 +16,32 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(permitted_parameters)
-
+    @room = Room.new(room_params)
+    authorize @room
     if @room.save
-      flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to rooms_path
+      redirect_to rooms_path, success: t('rooms.success_create')
     else
+      flash.now[:danger] = t('rooms.failed_create')
       render :new
     end
   end
 
-  def edit; end
+  def edit
+    authorize @room
+  end
 
   def update
-    if @room.update_attributes(permitted_parameters)
-      flash[:success] = "Room #{@room.name} was updated successfully"
-      redirect_to rooms_path
+    authorize @room
+    if @room.update_attributes(room_params)
+      redirect_to rooms_path, success: t('rooms.success_update')
     else
-      render :new
+      flash.now[:danger] = t('rooms.failed_update')
+      render :edit
     end
+  end
+
+  def destroy
+    authorize @room
   end
 
   protected
@@ -44,7 +51,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id]) if params[:id]
   end
 
-  def permitted_parameters
+  def room_params
     params.require(:room).permit(:name)
   end
 end

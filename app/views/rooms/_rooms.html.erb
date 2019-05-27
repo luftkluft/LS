@@ -1,19 +1,19 @@
 <div class="mb-3">
   <% if current_user.role == 'admin' %>
-  <%= link_to new_room_path, class: 'btn btn-primary' do %>
-    Create a room
-  <% end %>
+    <%= link_to new_room_path, class: 'btn btn-primary' do %>
+      <%= t('rooms.create_room') %>
+    <% end %>
   <% end %>
 </div>
 
 <% if @rooms.present? %>
-  <nav class="nav flex-column">
+  <nav class="nav flex-column room-link-container">
     <% @rooms.each do |room| %>
       <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %><br>
     <% end %>
   </nav>
 <% else %>
   <div class="text-muted">
-    The are no rooms
+    <%= t('rooms.no_rooms') %>
   </div>
 <% end %>

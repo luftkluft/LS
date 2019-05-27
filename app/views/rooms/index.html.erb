@@ -1,21 +1,19 @@
-<div class="row">
+<div class="row room-container">
   <div class="col-12 col-md-3">
+    <h4>
+      <%= t('rooms.rooms_title') %>
+    </h4>
     <%= render partial: 'rooms' %>
   </div>
-
+  <div class="col-12 col-md-9">
     <div class="alert alert-primary">
-      <h4 class="alert-heading">
-        Welcome to the RailsChatTutorial!
-      </h4>
-
-      <p>
-        We need to talk.
-      </p>
-
-      <hr />
-
-      <p>
-        You can create or join a room from the sidebar.
-      </p>
+    <h4 class="alert-heading">
+      <%= t('rooms.hello') %>
+    </h4>
+    <hr />
+    <p>
+      <%= t('rooms.how_do') %>
+    </p>
     </div>
+  </div>
 </div>

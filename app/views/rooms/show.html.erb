@@ -2,22 +2,21 @@
   <%= @room.name %>
 </h1>
 
-<div class="row">
+<div class="row room-container">
   <div class="col-12 col-md-3">
-    <%= render partial: 'rooms' %>
+    <%= render 'rooms' %>
   </div>
-
   <div class="col-12 col-md-9">
-  <h3>Current messages</h3>
+    <h3><%= t('rooms.current_messages') %></h3>
   <div class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>"></div>
   <%= form_for @room_message, remote: true do |f| %>
     <div class="form group">
-      <%= f.text_field :message, class: 'form-control', placeholder: 'Print hear...', autofocus: true %>
-      <%= f.submit "Send message", class: 'btn btn-primary form-control-addon' %>
+      <%= f.text_field :message, class: 'form-control', placeholder: t('rooms.typing'), autofocus: true %>
+      <%= f.submit t('rooms.send'), class: 'btn btn-primary form-control-addon' %>
   </div>
       <%= f.text_field :room_id, type: "hidden" %>
     <% end %>
-    <h3><%= @room.name %> history</h3>
+    <h3><%= t('rooms.history') %></h3>
     <div class="chat">
       <% @room_messages.each do |room_message| %>
         <div class="chat-message-container">
@@ -25,7 +24,7 @@
             <div class="col">
               <div class="message-content">
                 <p class="mb-1">
-                  <%= image_tag User.find(room_message.user_id).image.url,class: "avatar" %>
+                  <%= user_image(room_message) %>
                   <%= room_message.message %>
                 </p>
                 <div class="text-right">

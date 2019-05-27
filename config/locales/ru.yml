@@ -1,4 +1,22 @@
 ru:
+  rooms:
+    rooms_title: "Комнаты:"
+    how_do: "Выберите комнату для общения из боковой панели."
+    hello: "Помни, враг подсматривает!"
+    create_room: "Создать комнату"
+    creating_room: "Создание комнаты"
+    editing_room: "Редактирование комнаты"
+    no_rooms: "Нет комнат."
+    current_messages: "Текущие сообщения:"
+    history: "История сообщений:"
+    typing: "Начните печатать здесь..."
+    send: "Отправить"
+    save: "Сохранить"
+    back: "Назад"
+    success_create: "Комната успешно создана."
+    failed_create: "Ошибка создания комнаты!"
+    success_update: "Комната успешно обновлена."
+    failed_update: "Ошибка обновления комнаты!"
   app_info:
     version: '%{version}'
     current_user_error: "Залогинтесь!"
@@ -33,6 +51,7 @@ ru:
       long: "%Y-%m-%d %H:%M:%S"
   common:
     errors: "Ошибки"
+    back: "Назад"
   tags:
     no_articles: "Нет статей."
     tags: "Теги"
