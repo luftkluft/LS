@@ -1,5 +1,5 @@
 class InfoService
-  APP_VERSION = 'Version: 0.0.1'.freeze
+  APP_VERSION = 'Version: 0.1.0'.freeze
   require 'socket'
 
   def app_info(current_user)
