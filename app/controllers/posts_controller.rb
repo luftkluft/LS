@@ -62,6 +62,8 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  rescue StandardError
+    redirect_to posts_path
   end
 
   def set_encrypted_post
@@ -70,6 +72,8 @@ class PostsController < ApplicationController
     @post = crypter.encrypted_data(@post)
     flash.now[:danger] = crypter.errors.first if crypter.errors.any?
     @post
+  rescue StandardError
+    redirect_to posts_path
   end
 
   def set_decrypted_post
@@ -78,6 +82,8 @@ class PostsController < ApplicationController
     @post = crypter.decrypted_back(@post)
     flash.now[:danger] = crypter.errors.first if crypter.errors.any?
     @post
+  rescue StandardError
+    redirect_to posts_path
   end
 
   def post_params

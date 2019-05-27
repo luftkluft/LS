@@ -67,6 +67,8 @@ class CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+  rescue StandardError
+    redirect_to categories_path
   end
 
   def current_page

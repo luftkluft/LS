@@ -6,7 +6,7 @@ en:
     create_room: "Create room"
     editing_room: "Editing room"
     creating_room: "Creating room"
-    no_rooms: "The are no rooms."
+    no_rooms: "the are no rooms"
     current_messages: "Current messages:"
     history: "Message history:"
     typing: "Start typing here..."
@@ -33,6 +33,7 @@ en:
     encrypt_error: 'Coding error!'
     decrypt_error: 'Decoding error!'
     articles_decrypt_error: 'Articles decoding error!'
+    messages_decrypt_error: 'Messages decoding error!'
   home:
     hello: 'Hello, unidentified passerby!'
   pundit:

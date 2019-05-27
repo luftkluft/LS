@@ -7,8 +7,12 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @rooms = Room.all
+    crypter = CryptMessageService.new
     @room_message = RoomMessage.new room: @room
     @room_messages = @room.room_messages.includes(:user).order('created_at DESC')
+    @room_messages = crypter.decypted_messages(@room_messages)
+    flash.now[:danger] = crypter.errors.first if crypter.errors.any?
   end
 
   def new
@@ -47,8 +51,9 @@ class RoomsController < ApplicationController
   protected
 
   def load_entities
-    @rooms = Room.all
     @room = Room.find(params[:id]) if params[:id]
+  rescue StandardError
+    redirect_to rooms_path
   end
 
   def room_params

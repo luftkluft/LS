@@ -6,7 +6,7 @@ ru:
     create_room: "Создать комнату"
     creating_room: "Создание комнаты"
     editing_room: "Редактирование комнаты"
-    no_rooms: "Нет комнат."
+    no_rooms: "нет комнат"
     current_messages: "Текущие сообщения:"
     history: "История сообщений:"
     typing: "Начните печатать здесь..."
@@ -33,6 +33,7 @@ ru:
     encrypt_error: 'Ошибка кодирования!'
     decrypt_error: 'Ошибка декодирования!'
     articles_decrypt_error: 'Ошибка декодирования статей!'
+    messages_decrypt_error: 'Ошибка декодирования сообщений!'
   home:
     hello: 'Привет, неопознанный прохожий!'
   pundit:
